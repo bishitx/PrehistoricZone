@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="fade"></div>
+    
+    <a href="index.html">← Volver</a>
+
+    <h1>Categories</h1>
+
+    <ul>
+        <li><a href="categoria 1.html">Paleozoic Era</a></li>
+        <li><a href="categoria 2.html">Mesozoic Era</a></li>
+        <li><a href="categoria 3.html">Cenozoic Era</a></li>
+    </ul>
+
+<script>
+// Fade al entrar
+window.addEventListener("load", () => {
+    const fade = document.querySelector(".fade");
+    fade.style.opacity = "0";
+});
+
+// Fade al salir
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        const href = this.getAttribute("href");
+
+        if (href && !href.startsWith("#")) {
+            e.preventDefault();
+
+            const fade = document.querySelector(".fade");
+            fade.classList.add("active");
+
+            setTimeout(() => {
+                window.location.href = href;
+            }, 500);
+        }
+    });
+});
+</script>
+
+</body>
+</html>

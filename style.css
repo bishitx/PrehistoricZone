@@ -1,0 +1,246 @@
+
+/* =========================
+   🌑 BASE GENERAL
+========================= */
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #0e0e0e, #1a1a1a);
+    color: #f3eed7;
+}
+
+/* =========================
+   🔗 LINKS
+========================= */
+
+a {
+    color: #e7dca8;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: #fff3c4;
+    text-decoration: underline;
+}
+
+/* =========================
+   🦴 TÍTULOS
+========================= */
+
+h1 {
+    text-align: center;
+    color: #f1e6b8;
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px rgba(241, 230, 184, 0.15);
+}
+
+h2 {
+    color: #e7dca8;
+}
+
+/* =========================
+   🧭 HEADER (logo + nombre)
+========================= */
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #121212;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+header img {
+    border-radius: 8px;
+}
+
+/* =========================
+   📦 INTRO / SECCIONES
+========================= */
+
+section {
+    margin: 20px 0;
+    padding: 15px;
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+}
+
+/* =========================
+   📁 DETAILS (ACORDEÓN)
+========================= */
+
+details {
+    background: #121212;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #2a2a2a;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #f1e6b8;
+}
+
+details p {
+    margin-top: 10px;
+    line-height: 1.5;
+    color: #f3eed7;
+}
+
+/* =========================
+   🔍 BUSCADOR
+========================= */
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #0f0f0f;
+    color: #f3eed7;
+    outline: none;
+}
+
+/* =========================
+   🔘 BOTONES
+========================= */
+
+button,
+input[type="submit"] {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #e7dca8;
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background: #d8c98e;
+}
+
+/* =========================
+   📋 LISTAS (CATEGORIES)
+========================= */
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+    padding: 10px;
+    background: #121212;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+}
+
+/* =========================
+   💬 FORMULARIO (Formspree)
+========================= */
+
+form {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* =========================
+   🌫 FADE (transiciones)
+========================= */
+
+.fade {
+    position: fixed;
+    inset: 0;
+    background: black;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.fade.active {
+    opacity: 1;
+}
+
+/* =========================
+   📱 RESPONSIVE
+========================= */
+
+/* =========================
+   📱 RESPONSIVE (Actualizado)
+========================= */
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Menos espacio en los bordes para ganar pantalla */
+        font-size: 16px; /* Tamaño de letra cómodo para leer */
+    }
+
+    header {
+        flex-direction: column; /* El logo arriba y el nombre abajo */
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    header img {
+        width: 80px; /* Un poco más pequeño para que no ocupe todo */
+        height: auto;
+    }
+
+    /* Ajuste para que los cuadros no se vean tan apretados */
+    section, details, ul li {
+        padding: 12px;
+        margin: 10px 0;
+    }
+
+    /* El buscador y botones ocuparán el 100% del ancho */
+    input[type="text"], 
+    button {
+        width: 100%;
+        box-sizing: border-box; /* Evita que el padding los ensanche de más */
+        margin: 5px 0;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}  @media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* Agrega esto a tu CSS general */
+#buscador {
+    margin-bottom: 15px;
+    border: 2px solid #e7dca8; /* Un borde dorado para que resalte más */
+}
+.boton-volver {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #2a2a2a;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}

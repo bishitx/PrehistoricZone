@@ -1,0 +1,87 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prehistoric Zone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="fade"></div>
+    
+<header>
+    <img src="logo.png" width="100" height="100" alt="Logo Prehistoric Zone">
+    <span>Prehistoric Zone</span>
+</header>
+
+<main>
+    <h1>Prehistoric Zone</h1>
+
+    <section class="introduccion">
+        <h2>La vida prehistórica</h2>
+        <p>
+            Todo esto de los dinosaurios y la vida prehistórica puede ser un poco confuso. <br>
+            Por eso, les presento esta pequeña web que creé para categorizar 
+            las diferentes especies a lo largo de la historia de la Tierra.
+        </p>
+        <a href="categorias.html" class="boton-categorias">Ver Categorías</a>
+    </section>
+
+    <section class="autor">
+        <h2>👤 Sobre el autor</h2>
+        <p>
+            Hola, me llamo Maely y soy estudiante del Colegio Alborada de Lampa.  
+
+        Este proyecto fue creado para la feria de la ciencia que se realizará en el colegio.  
+        Me propuse el reto de desarrollarlo en poco tiempo: lo comencé el lunes 6 de abril de 2026 y planeo terminarlo el lunes 13 de abril del mismo año.  
+        Debido al tiempo limitado, la página está pensada para ser corta, directa e interactiva.
+        </p>
+    </section>
+
+    <section class="comentarios">
+        <h2>💬 Comentarios</h2>
+        <p>Deja tu opinión o sugerencias para mejorar la página:</p>
+
+        <form action="https://formspree.io/f/mqegvpqd" method="POST">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu correo (opcional)">
+            <textarea name="mensaje" placeholder="Escribe tu comentario aquí..." required></textarea>
+            <input type="hidden" name="_subject" value="Nuevo comentario en Prehistoric Zone">
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+</main>
+
+<script>
+// Fade al entrar
+window.addEventListener("load", () => {
+    const fade = document.querySelector(".fade");
+    if (fade) {
+        fade.style.opacity = "0";
+        // Opcional: ocultarlo del flujo para que no interfiera con los clics
+        setTimeout(() => { fade.style.display = "none"; }, 500);
+    }
+});
+
+// Fade al salir
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        const href = this.getAttribute("href");
+
+        if (href && !href.startsWith("#")) {
+            e.preventDefault();
+            const fade = document.querySelector(".fade");
+            if (fade) {
+                fade.style.display = "block";
+                setTimeout(() => { fade.style.opacity = "1"; }, 10);
+                setTimeout(() => { window.location.href = href; }, 500);
+            }
+        }
+    });
+});
+</script>
+
+</body>
+</html>
